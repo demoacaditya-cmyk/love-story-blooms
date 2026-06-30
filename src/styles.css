@@ -164,5 +164,25 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
+}
+
+@utility glass-card {
+  background: var(--gradient-glass);
+  backdrop-filter: blur(20px) saturate(140%);
+  border: 1px solid color-mix(in oklab, var(--rose-gold) 35%, transparent);
+  box-shadow: var(--shadow-glass);
+}
+
+@utility glass-soft {
+  background: color-mix(in oklab, white 55%, transparent);
+  backdrop-filter: blur(18px) saturate(135%);
+  border: 1px solid color-mix(in oklab, white 70%, transparent);
+}
+
+@utility text-balance {
+  text-wrap: balance;
 }
