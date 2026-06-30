@@ -268,12 +268,12 @@ function CandleNode({ x, blown, onTap }: { x: number; blown: boolean; onTap: () 
       aria-label="Blow this candle"
       style={{
         left: `${leftPercent}%`,
-        bottom: "55.4%",
+        top: "12%",
         transform: "translate(-50%, 0)",
         pointerEvents: "auto",
         background: "transparent",
         border: 0,
-        padding: "16px 16px 0 16px",
+        padding: 16,
         cursor: "pointer",
       }}
     >
