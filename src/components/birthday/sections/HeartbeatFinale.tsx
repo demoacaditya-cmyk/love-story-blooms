@@ -112,8 +112,18 @@ export function HeartbeatFinale() {
         }}
       />
 
-      <div className="relative h-[60svh] w-full max-w-[24rem]">
-        <div className="finale-canvas absolute inset-0">
+     <div
+  className="relative h-[60svh] w-full max-w-[24rem]"
+  style={{ background: "transparent" }}
+>
+       <div
+  className="finale-canvas absolute inset-0"
+  style={{
+    background: "transparent",
+    border: "none",
+    boxShadow: "none",
+  }}
+>
           {inView && <HeartScene onPulse={handlePulse} zoomOut={zoomOut} />}
         </div>
 

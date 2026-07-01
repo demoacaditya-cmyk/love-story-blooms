@@ -4,6 +4,7 @@ import { PhonePhoto } from "../PhonePhoto";
 import { birthdayContent } from "@/lib/birthday/content";
 import { useGsapContext } from "@/hooks/useGsapContext";
 import { easings, durations } from "@/lib/birthday/motion";
+import bg from "../../../images/bg.jpg";
 
 interface HeroProps {
   onBegin: () => void;
@@ -16,8 +17,8 @@ export function Hero({ onBegin }: HeroProps) {
     const tl = gsap.timeline({ delay: 0.2, defaults: { ease: easings.cinematic } });
     tl.fromTo(
       ".hero-photo",
-      { autoAlpha: 0, scale: 1.08, filter: "blur(20px)" },
-      { autoAlpha: 0.55, scale: 1, filter: "blur(6px)", duration: durations.cinematic },
+      { autoAlpha: 0, scale: 1.08, filter: "blur(0px)" },
+      { autoAlpha: 0.55, scale: 1, filter: "blur(2px)", duration: durations.cinematic },
     )
       .fromTo(
         ".hero-greeting",
@@ -74,6 +75,7 @@ export function Hero({ onBegin }: HeroProps) {
     >
       <div className="hero-photo absolute inset-0 will-change-transform">
         <PhonePhoto
+         src={bg}
           aspect="9 / 16"
           rounded="rounded-none"
           className="h-full w-full"
@@ -83,7 +85,7 @@ export function Hero({ onBegin }: HeroProps) {
           style={{
             background:
               "linear-gradient(180deg, color-mix(in oklab, var(--blush) 70%, transparent) 0%, color-mix(in oklab, white 40%, transparent) 60%, color-mix(in oklab, var(--lavender) 70%, transparent) 100%)",
-            backdropFilter: "blur(8px)",
+            backdropFilter: "blur(2px)",
           }}
         />
       </div>

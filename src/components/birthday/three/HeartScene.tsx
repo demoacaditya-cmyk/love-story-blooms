@@ -108,7 +108,7 @@ export function HeartScene({ onPulse, zoomOut }: HeartSceneProps) {
       gl={{ antialias: true, alpha: true }}
       style={{ background: "transparent" }}
     >
-      <ambientLight intensity={0.4} />
+      <ambientLight intensity={0.2} />
       <pointLight position={[4, 4, 6]} intensity={3.5} color="#ffb3c8" />
       <pointLight position={[-4, -3, 4]} intensity={1.8} color="#c89cff" />
       <Suspense fallback={null}>
@@ -116,7 +116,7 @@ export function HeartScene({ onPulse, zoomOut }: HeartSceneProps) {
       </Suspense>
       <CameraDolly trigger={zoomOut} />
       <EffectComposer>
-        <Bloom intensity={1.1} luminanceThreshold={0.15} luminanceSmoothing={0.6} mipmapBlur />
+        <Bloom intensity={0.0} luminanceThreshold={0.15} luminanceSmoothing={0.6} mipmapBlur />
       </EffectComposer>
     </Canvas>
   );

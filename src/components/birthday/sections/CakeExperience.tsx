@@ -11,8 +11,8 @@ interface CakeExperienceProps {
   onComplete: () => void;
 }
 
-const CANDLE_COUNT = 5;
-const CANDLE_X = [-72, -36, 0, 36, 72];
+const CANDLE_COUNT = 3;
+const CANDLE_X = [-25, 0, 25];
 
 export function CakeExperience({ onComplete }: CakeExperienceProps) {
   const root = useRef<HTMLElement | null>(null);
@@ -305,7 +305,7 @@ function CandleNode({ x, blown, onTap }: { x: number; blown: boolean; onTap: () 
         />
         {/* candle */}
         <div
-          className="absolute inset-x-0 top-0 mx-auto"
+          className="absolute inset-x-0 top-8 mx-auto"
           style={{
             width: 6,
             height: 56,

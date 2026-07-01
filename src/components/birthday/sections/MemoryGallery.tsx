@@ -6,6 +6,9 @@ import { birthdayContent } from "@/lib/birthday/content";
 import { useGsapContext } from "@/hooks/useGsapContext";
 import { easings } from "@/lib/birthday/motion";
 
+
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 type FromVars = gsap.TweenVars;
@@ -108,6 +111,7 @@ export function MemoryGallery() {
               style={{ willChange: "transform, opacity, filter" }}
             >
               <PhonePhoto
+                src={slot.src}
                 caption={slot.caption}
                 aspect="3 / 4"
                 className="h-full w-full"
