@@ -47,7 +47,7 @@ export function BirthdayExperience() {
 
   return (
     <main className="relative">
-      <HeartParticles density={32} />
+      <HeartParticles density={70} />
       <div className="relative" style={{ zIndex: 2 }}>
         <Hero onBegin={() => scrollTo(letterRef.current)} />
         <div ref={letterRef}>
