@@ -71,14 +71,17 @@ export function MemoryGallery() {
         </h2>
       </header>
 
-      <ul className="mx-auto flex max-w-[22rem] flex-col gap-8">
+      <ul className="mx-auto flex max-w-[24rem] flex-col gap-10">
         {birthdayContent.gallery.map((slot, i) => (
           <li
             key={slot.id}
-            className="memory-card glass-card relative rounded-3xl p-4"
+            className={`memory-card glass-card relative w-[85%] rounded-3xl p-4 ${
+              i % 2 === 0 ? "self-start" : "self-end"
+            }`}
             style={{
               color: "var(--plum-ink)",
               willChange: "transform, opacity, filter",
+              transformOrigin: i % 2 === 0 ? "left center" : "right center",
             }}
           >
             <div
