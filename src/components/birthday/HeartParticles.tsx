@@ -124,7 +124,7 @@ export function HeartParticles({ density = 36, tint = "rose" }: HeartParticlesPr
       ref={ref}
       aria-hidden
       className="pointer-events-none fixed inset-0"
-      style={{ zIndex: 1 }}
+      style={{ zIndex: 60 }}
     />
   );
 }
