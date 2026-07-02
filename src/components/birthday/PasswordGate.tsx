@@ -15,6 +15,9 @@ export function PasswordGate({ children }: { children: React.ReactNode }) {
     if (value.trim() === PASSWORD) {
       setError(false);
       setUnlocked(true);
+      requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+      });
     } else {
       setError(true);
     }

@@ -101,11 +101,18 @@ export function LoveLetter() {
         >
           {birthdayContent.letter.map((para, i) => (
             <p key={i}>
-              {para.split("").map((ch, j) => (
-                <span key={j} className="letter-char inline-block whitespace-pre">
-                  {ch}
-                </span>
-              ))}
+              {para.split(/(\s+)/).map((word, j) => {
+                if (/^\s+$/.test(word)) return <span key={j}>{word}</span>;
+                return (
+                  <span key={j} className="inline-block whitespace-nowrap align-baseline">
+                    {word.split("").map((ch, k) => (
+                      <span key={k} className="letter-char inline-block">
+                        {ch}
+                      </span>
+                    ))}
+                  </span>
+                );
+              })}
             </p>
           ))}
         </div>
