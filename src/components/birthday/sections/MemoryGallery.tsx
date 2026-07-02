@@ -14,17 +14,28 @@ export function MemoryGallery() {
   useGsapContext(() => {
     const cards = root.current?.querySelectorAll<HTMLElement>(".memory-card");
     if (!cards) return;
-    cards.forEach((card) => {
+    cards.forEach((card, i) => {
+      const fromLeft = i % 2 === 0;
       gsap.fromTo(
         card,
-        { autoAlpha: 0, y: 40, filter: "blur(16px)" },
+        {
+          autoAlpha: 0,
+          x: fromLeft ? -140 : 140,
+          y: 30,
+          rotateZ: fromLeft ? -8 : 8,
+          scale: 0.9,
+          filter: "blur(14px)",
+        },
         {
           autoAlpha: 1,
+          x: 0,
           y: 0,
+          rotateZ: fromLeft ? -2 : 2,
+          scale: 1,
           filter: "blur(0px)",
           duration: durations.slow,
-          ease: easings.cinematic,
-          scrollTrigger: { trigger: card, start: "top 85%" },
+          ease: "back.out(1.4)",
+          scrollTrigger: { trigger: card, start: "top 88%" },
         },
       );
     });
